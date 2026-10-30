@@ -1,0 +1,89 @@
+<!doctype html>
+<!--
+  The preview card that shows when someone shares a Code Phrasebook link (public/og-image.png, 1200×630).
+  After editing, remake the PNG from the project folder with:
+
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --hide-scrollbars \
+    --window-size=1200,630 --virtual-time-budget=5000 \
+    --screenshot="$PWD/public/og-image.png" "file://$PWD/scripts/og-image.html"
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&display=block"
+      rel="stylesheet"
+    />
+    <style>
+      * { box-sizing: border-box; margin: 0; }
+      html, body { width: 1200px; height: 630px; overflow: hidden; }
+      body {
+        font-family: Lexend, system-ui, sans-serif;
+        color: #1b2440;
+        background: #fafafd;
+        display: flex;
+        align-items: center;
+        gap: 48px;
+        padding: 64px 64px 64px 72px;
+        position: relative;
+      }
+      body::before {
+        content: '';
+        position: absolute;
+        right: -140px;
+        top: -160px;
+        width: 660px;
+        height: 660px;
+        border-radius: 50%;
+        background: #f1eeff;
+      }
+      .text, .card { position: relative; }
+      .text { flex: 1; }
+      .logo { display: flex; align-items: center; gap: 16px; font-size: 32px; font-weight: 700; letter-spacing: -0.02em; }
+      .logo svg { width: 54px; height: 54px; }
+      h1 { margin-top: 40px; font-size: 64px; line-height: 1.05; font-weight: 700; letter-spacing: -0.03em; }
+      .intro { margin-top: 24px; font-size: 26px; line-height: 1.45; color: #4a5373; max-width: 470px; }
+      .card {
+        flex: none;
+        width: 560px;
+        padding: 30px;
+        background: #fff;
+        border: 1px solid #ecebf5;
+        border-radius: 28px;
+        box-shadow: 0 2px 6px rgba(27, 36, 64, 0.06), 0 16px 36px rgba(27, 36, 64, 0.12);
+      }
+      .english { font-size: 27px; font-weight: 500; line-height: 2; }
+      .row { margin-top: 12px; padding: 10px 16px; border-radius: 16px; background: #fafafd; }
+      .row b { display: block; font-size: 15px; color: #4a5373; }
+      .code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 19px; line-height: 1.9; white-space: pre; }
+      .pill { border-radius: 7px; padding: 1px 5px; border-bottom: 2px solid; white-space: nowrap; }
+      .pill i {
+        display: inline-flex; align-items: center; justify-content: center;
+        width: 20px; height: 20px; margin-right: 5px; border-radius: 50%;
+        font: 700 12px Lexend, sans-serif; font-style: normal; color: #fff; vertical-align: 0.15em;
+      }
+      .c { background: #f1eeff; border-color: #5b4be0; } .c i { background: #3b2db8; }
+      .v { background: #fff3e3; border-color: #d9480f; } .v i { background: #9a3d06; }
+      .p { background: #e6f7f0; border-color: #0a8f65; } .p i { background: #066b4b; }
+      .g { color: #066b4b; }
+    </style>
+  </head>
+  <body>
+    <div class="text">
+      <div class="logo">
+        <svg viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#5B4BE0"/><g fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 10 6 16l6 6"/><path d="M20 10l6 6-6 6"/></g></svg>
+        Code Phrasebook
+      </div>
+      <h1>Code is a language too</h1>
+      <p class="intro">Everyday English next to the same idea in Python, JavaScript and C++.</p>
+    </div>
+
+    <!-- Phrase 1, the way the site shows it. -->
+    <div class="card">
+      <p class="english"><span class="pill c"><i>1</i>Show</span> <span class="pill v"><i>2</i>"Hello, world!"</span> <span class="pill c"><i>1</i>on the screen</span><span class="pill p"><i>3</i>.</span></p>
+      <div class="row"><b>Python</b><span class="code"><span class="pill c"><i>1</i>print</span><span class="g">(</span><span class="pill v"><i>2</i>"Hello, world!"</span><span class="g">)</span></span></div>
+      <div class="row"><b>JavaScript</b><span class="code"><span class="pill c"><i>1</i>console.log</span><span class="g">(</span><span class="pill v"><i>2</i>"Hello, world!"</span><span class="g">)</span><span class="pill p"><i>3</i>;</span></span></div>
+      <div class="row"><b>C++</b><span class="code"><span class="pill c"><i>1</i>std::cout &lt;&lt;</span> <span class="pill v"><i>2</i>"Hello, world!"</span><span class="pill p"><i>3</i>;</span></span></div>
+    </div>
+  </body>
+</html>
